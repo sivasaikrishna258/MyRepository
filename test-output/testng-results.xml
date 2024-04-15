@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-04-04T14:41:38 IST" name="Default suite" finished-at="2024-04-04T14:41:40 IST" duration-ms="2618">
+    <groups>
+    </groups>
+    <test started-at="2024-04-04T14:41:38 IST" name="Default test" finished-at="2024-04-04T14:41:40 IST" duration-ms="2618">
+      <class name="restassuredBddimplementation.ResponseVerify">
+        <test-method signature="Verifyresponse()[pri:0, instance:restassuredBddimplementation.ResponseVerify@2145b572]" started-at="2024-04-04T14:41:38 IST" name="Verifyresponse" finished-at="2024-04-04T14:41:40 IST" duration-ms="2577" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verifyresponse -->
+      </class> <!-- restassuredBddimplementation.ResponseVerify -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
