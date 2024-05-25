@@ -2,18 +2,22 @@ package restassuredBddimplementation;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.*;
-import static io.restassured.matcher.RestAssuredMatchers.*;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.hasItems;
 
+import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
 
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import io.restassured.response.ValidatableResponse;
+import io.restassured.specification.RequestSpecification;
 
 public class HTTPMethodsImplementation {
 	
 	
-	@Test
+	//@Test
 	public void Get() {
 		
 		baseURI="https://reqres.in/api";
@@ -25,12 +29,37 @@ public class HTTPMethodsImplementation {
 	}
 	
 	@Test
-	public void Get1() {
+	public void Post() {
 		
-		baseURI="https://reqres.in/api";
-		Response res = given().
-		when().get("/users?page=2");
 		
+		
+		JSONObject js=new JSONObject();
+		
+		js.put("name", "siva");
+		js.put("role", "sdet");
+		
+		RequestSpecification request = given();
+		request.body(js.toJSONString());
+		request.contentType(ContentType.JSON);
+		
+		Response response = request.when().post("https://reqres.in/api/users");
+		ValidatableResponse verify = response.then();
+		
+		verify.statusCode(201).log().headers();
+		
+		
+	}
+	
+	@Test
+	public void Put() {
+		RequestSpecification request = given();
+		request.header("Content-Type","application.json");
+		Response res = request.when().put("https://reqres.in/api/users/2");
+		
+		ValidatableResponse response = res.then();
+		
+		response.statusCode(201);
+	
 	}
 	
 

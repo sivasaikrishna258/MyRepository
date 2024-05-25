@@ -18,14 +18,16 @@ public class ParsingJSONResponseBody {
 					   when().get("https://reqres.in/api/users?page=2");
 		
 		
+
 		//approach 1 for getting the fields on our wish using json path
-//		String id=res.jsonPath().get("data[0].id").toString();
-//		System.out.println(id);
+		String id=res.jsonPath().get("data[0].id").toString();
+		//String a = res.jsonPath().setRootPath("data[0]").get(id).toString();
+		System.out.println(id);
 		
 		//approach 2 for getting all the fileds from response with corresponding value
 		int a1=0;
 		JSONObject obj=new JSONObject(res.asString()); //converting response into jsonobject
-		
+	
 		System.out.println(obj.getJSONArray("data").getJSONObject(0).get("id"));
 		
 		for(int i=0;i<obj.getJSONArray("data").length();i++) {

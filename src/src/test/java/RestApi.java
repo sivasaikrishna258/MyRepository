@@ -14,8 +14,6 @@ public class RestApi {
 		baseURI="https://reqres.in/api";
 		given().get("/users?page=2").body();
 		
-		
-		
 	}
 	
 	@Test(enabled=true)

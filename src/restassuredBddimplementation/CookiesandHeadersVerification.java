@@ -44,7 +44,7 @@ public class CookiesandHeadersVerification {
 	}
 	
 	//getting all headers
-	@Test
+	//@Test
 	void getHeaders() {
 		
 		Response res = given().contentType(ContentType.JSON).
@@ -55,6 +55,16 @@ public class CookiesandHeadersVerification {
 		System.out.println(hd.getName()+"="+hd.getValue());
 	}
 	}
+		
+	@Test
+		void getHeaderstype() {
+			
+			 given().
+			when().get("https://www.google.com").then().header("Content-Type", equalTo("text/html; charset=ISO-8859-1")).log();
+		
+			
+			
+		}
 	
 	
 

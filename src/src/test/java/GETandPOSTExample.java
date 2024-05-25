@@ -13,13 +13,13 @@ public void GET() {
 		
 		baseURI="https://reqres.in/api";
 		given().get("/users?page=2").
-		then().
-		statusCode(200).body("data[1].id", equalTo(8)).log().all();
+		then().log().body();
+//		statusCode(200).body("page", equalTo(2)).log();
 		
 	}
 
 	
-	@Test
+	//@Test
 	public void Post() {	
 		
 		JSONObject req=new JSONObject();

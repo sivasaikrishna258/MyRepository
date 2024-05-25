@@ -36,7 +36,7 @@ public class ParsingXMLResponseBody {
 		
 		given().
 		when().get("https://chercher.tech/sample/api/books.xml").
-		then().root("bookstore.book[0]").body("author",equalTo("Hannah")).log().ifValidationFails();
+		then().body("bookstore.book[0].author",equalTo("Hannah")).log().ifValidationFails();
 		
 		
 		

@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="restassuredBddimplementation.CheckingResponseTime">
+      <class name="restassuredBddimplementation.HTTPMethodsImplementation">
         <methods>
-          <include name="verifyHeaders"/>
+          <include name="Post"/>
         </methods>
-      </class> <!-- restassuredBddimplementation.CheckingResponseTime -->
+      </class> <!-- restassuredBddimplementation.HTTPMethodsImplementation -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
